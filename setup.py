@@ -1,4 +1,8 @@
 import setuptools
+import os
+
+with open(os.path.dirname(os.path.realpath(__file__)) + '/requirements.txt') as fh:
+    install_requires = fh.read().splitlines()
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
@@ -15,6 +19,7 @@ setuptools.setup(
     project_urls={
         "Bug Tracker": "https://github.com/IKermani/jcalendar/issues",
     },
+    install_requires=install_requires,
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 2",
