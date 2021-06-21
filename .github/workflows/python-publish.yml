@@ -36,9 +36,6 @@ jobs:
 
   publish:
 
-    needs: [ job1, job2 ]
-      if: ${{ (needs.job1.result == 'success' || needs.job2.result == 'success') && always() }}
-
     runs-on: ubuntu-latest
 
     steps:
