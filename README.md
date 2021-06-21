@@ -4,7 +4,7 @@ jcalendar is [Jalali](https://en.wikipedia.org/wiki/Iranian_calendars) implement
 ## Status
 ![build workflow](https://github.com/IKermani/jcalendar/actions/workflows/python-publish.yml/badge.svg)
 ![version](https://img.shields.io/pypi/v/jcalendar.svg)
-![license](https://img.shields.io/pypi/l/jcalendar)
+![license](https://img.shields.io/pypi/l/jcalendar.svg)
 
 
 ## Install
