@@ -58,17 +58,8 @@ month_abbr = [0] + jdatetime.date.j_months_short_en
 def isleap(year):
     """
     Return True for leap years, False for non-leap years.
-    https://fa.wikipedia.org/wiki/%D8%B3%D8%A7%D9%84_%DA%A9%D8%A8%DB%8C%D8%B3%D9%87
     """
-    year_1244_1342 = [1, 5, 9, 13, 17, 21, 26, 30]
-    year_1343_1472 = [1, 5, 9, 13, 17, 22, 26, 30]
-
-    if 1343 < year < 1472:
-        return year % 33 in year_1343_1472
-    if 1244 < year < 1342:
-        return year % 33 in year_1244_1342
-    else:
-        raise NotImplementedError("is_leap() does not work for years less than 1244 or more than 1472")
+    return jdatetime.date(year, 1, 1).isleap()
 
 
 def leapdays(y1, y2):
