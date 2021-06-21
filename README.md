@@ -1,18 +1,18 @@
-#jcalendar
+# jcalendar
 jcalendar is [Jalali](https://en.wikipedia.org/wiki/Iranian_calendars) implementation of Python's calendar module
 
-##Install
+## Install
 
 ```
 pip install jcalendar
 ```
 
-##Documents
+## Documents
 
 This module *almost* follows [Python calendar](https://docs.python.org/3/library/calendar.html).
 > *almost*: locale is not implemented yet.
 
-##Example
+## Example
 
 ```Python console
 >>> c = calendar.TextCalendar()
