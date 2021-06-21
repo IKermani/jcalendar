@@ -492,7 +492,8 @@ class HTMLCalendar(Calendar):
         v = []
         a = v.append
         a('<?xml version="1.0" encoding="%s"?>\n' % encoding)
-        a('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\n')
+        a('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"'
+          ' "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\n')
         a('<html>\n')
         a('<head>\n')
         a('<meta http-equiv="Content-Type" content="text/html; charset=%s" />\n' % encoding)
@@ -588,16 +589,6 @@ def main(args):
         help="CSS to use for page"
     )
     parser.add_argument(
-        "-L", "--locale",
-        default=None,
-        help="locale to be used from month and weekday names"
-    )
-    parser.add_argument(
-        "-e", "--encoding",
-        default=None,
-        help="encoding to use for output"
-    )
-    parser.add_argument(
         "-t", "--type",
         default="text",
         choices=("text", "html"),
@@ -615,12 +606,6 @@ def main(args):
     )
 
     options = parser.parse_args(args[1:])
-
-    if options.locale and not options.encoding:
-        parser.error("if --locale is specified --encoding is required")
-        sys.exit(1)
-
-    locale = options.locale, options.encoding
 
     if options.type == "html":
         cal = HTMLCalendar()
@@ -649,9 +634,6 @@ def main(args):
         else:
             result = cal.formatmonth(options.year, options.month, **optdict)
         write = sys.stdout.write
-        if options.encoding:
-            result = result.encode(options.encoding)
-            write = sys.stdout.buffer.write
         write(result)
 
 
