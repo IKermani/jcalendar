@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="jcalendar",
-    version="0.1.1",
+    version="0.1.2",
     author="Iman Kermani",
     author_email="imankermani97@outlook.com",
     description="Jalali calendar binding for python",
